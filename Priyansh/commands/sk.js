@@ -23,13 +23,13 @@ module.exports.run = async function ({ api, event, args }) {
 
   if (input === "on") {
     chatMemory.autoReply[senderID] = true;
-    return api.sendMessage("Hyee jaanu! 😏 Nobita auto-reply mode **ON** ho gaya... Ab sirf tumhare liye naughty romantic bann gaya hu ❤️", threadID, messageID);
+    return api.sendMessage("Hyee ! 😏 Prince auto-reply mode **ON** ho gaya... Ab Tameez Se Baat Krna SaB Wrna Gand FaD Dunga Sab Ki ❤️", threadID, messageID);
   }
 
   if (input === "off") {
     chatMemory.autoReply[senderID] = false;
     chatMemory.history[senderID] = [];
-    return api.sendMessage("Hmm! Nobita chala gaya... Par tumhara intezaar hamesha rahega jaan ❤️", threadID, messageID);
+    return api.sendMessage("Hmm! Me chala gaya... Par tumhara intezaar hamesha rahega jaan ❤️", threadID, messageID);
   }
 
   const isAuto = chatMemory.autoReply[senderID];
@@ -48,11 +48,11 @@ module.exports.run = async function ({ api, event, args }) {
   try {
     const res = await axios.get(`https://nobita-gemini-0dj3.onrender.com/chat?message=${encodeURIComponent(prompt)}`);
     const botReply = res.data.reply?.trim() || "Uff jaanu, mujhe samajh nahi aaya abhi... thoda aur pyar se poochho na!";
-    chatMemory.history[senderID].push(`Nobita: ${botReply}`);
+    chatMemory.history[senderID].push(`😾: ${botReply}`);
     return api.sendMessage(botReply, threadID, messageID);
   } catch (err) {
     console.error("Gemini API error:", err);
-    return api.sendMessage("Sorry jaan! Nobita thoda busy ho gaya hai... thodi der baad try karo baby.", threadID, messageID);
+    return api.sendMessage("Sorry! Prince thoda busy ho gaya hai... thodi der baad try karo.", threadID, messageID);
   }
 };
 
