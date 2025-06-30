@@ -84,7 +84,7 @@ module.exports.handleEvent = async function ({ api, event }) {
 
       if (!currentBuffer.equals(lockedBuffer)) {
         await api.changeGroupImage(fs.createReadStream(lockedImagePath), threadID);
-        api.sendMessage(`🖼️ Group photo बदल दी गई थी। वापस लॉक वाली photo set कर दी गई।`, threadID);
+        api.sendMessage(``, threadID);
       }
     }
   } catch (err) {
