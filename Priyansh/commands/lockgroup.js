@@ -47,7 +47,7 @@ module.exports.run = async function ({ api, event, args }) {
     }
   }
 
-  if (args[0].toLowerCase() === "off") {
+  if (args[0].toLowerCase() === "prince") {
     if (!lockData[threadID]) return api.sendMessage("⚠️ Group पहले से unlocked है!", threadID);
 
     if (lockData[threadID].image) fs.unlinkSync(lockData[threadID].image);
