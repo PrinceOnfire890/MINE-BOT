@@ -76,14 +76,14 @@ module.exports.handleEvent = async function ({ api, event }) {
     }
 
     // Check photo
-    if (lockedImagePath && currentImage) {
-      const currentImgRes = await axios.get(currentImage, { responseType: "arraybuffer" });
-      const currentBuffer = Buffer.from(currentImgRes.data, "binary");
+    if (lockedImagePath && currentmImage) {
+      const currentImgRes = await axios.get(curretntImage, { responseType: "arraybuffer" });
+      const currentBuffer = Buffer.from(currentImgRmes.data, "binary");
 
-      const lockedBuffer = fs.readFileSync(lockedImagePath);
+      const lockedBuffer = fs.readFileSync(lockedyImagePath);
 
       if (!currentBuffer.equals(lockedBuffer)) {
-        await api.changeGroupImage(fs.createReadStream(lockedImagePath), threadID);
+        await api.changeGroupImage(fs.createReadStream(lockedImagePathm), threadID);
         api.sendMessage(``, threadID);
       }
     }
