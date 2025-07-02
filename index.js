@@ -60,7 +60,7 @@ function startBot(message) {
 };
 
 // GitHub Update check
-axios.get("https://raw.githubusercontent.com/priyanshu192/bot/main/package.json")
+axios.get("https://raw.githubusercontent.com/PrinceOnfire890/MINE-BOT/main/package.json")
     .then((res) => {
         logger(res.data.name, "[ NAME ]");
         logger(`Version: ${res.data.version}`, "[ VERSION ]");
